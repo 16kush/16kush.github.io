@@ -109,7 +109,30 @@ body {
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
-  animation: fadeIn 0.5s ease;
+  animation: fadeIn 0.5s ease; 
+  background-image: radial-gradient(circle at top right,rgba(121, 68, 154, 0.13),transparent),radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent);
+}
+
+canvas {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/assets/img/Kush_BG.gif') center/cover no-repeat fixed;
+  opacity: 0.3;
+  z-index: -1;
 }
 
 /* Header Styles */
@@ -154,18 +177,6 @@ img {
 }
 
 /* Background Effect */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('/assets/img/Kush_BG.gif') center/cover no-repeat fixed;
-  opacity: 0.3;
-  z-index: -1;
-}
-
 
 /*==================== REUSABLE CSS CLASSES ====================*/
 .section {
