@@ -37,6 +37,16 @@ if (!self.__WB_pmw) { self.__WB_pmw = function (obj) { this.__WB_source = obj; r
     canvas2.ontouchend = onMouseLeave;
     document.onmouseleave = onMouseLeave;
 
+    function updateStarColor() {
+        const isDarkMode = getCurrentTheme() === "dark";
+        const starColor = isDarkMode ? 'white' : 'black';
+        stars.forEach((star) => {
+            star.color = starColor;
+        });
+    }
+
+    updateStarColor();
+
     function generate() {
 
         for (let i = 0; i < STAR_COUNT; i++) {
@@ -165,7 +175,7 @@ if (!self.__WB_pmw) { self.__WB_pmw = function (obj) { this.__WB_source = obj; r
             context.beginPath();
             context.lineCap = 'round';
             context.lineWidth = STAR_SIZE * star.z * scale;
-            context.strokeStyle = 'rgba(255,255,255,' + (0.5 + 0.5 * Math.random()) + ')';
+            context.strokeStyle = star.color;
 
             context.beginPath();
             context.moveTo(star.x, star.y);
@@ -184,6 +194,15 @@ if (!self.__WB_pmw) { self.__WB_pmw = function (obj) { this.__WB_source = obj; r
         });
 
     }
+
+    themeButton.addEventListener("click", () => {
+        localStorage.setItem("selected-theme", getCurrentTheme());
+        localStorage.setItem("selected-icon", getCurrentIcon());
+        updateStarColor(); // Update star colors on theme change
+    });
+
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', updateStarColor);
+
 
     function movePointer(x, y) {
 
