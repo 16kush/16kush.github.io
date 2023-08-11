@@ -129,7 +129,7 @@
 }
 
 .project__title, .project__description {
-  color: var(--text-color-light);
+ color: var(--title-color);
 }
 
 .project__img {
