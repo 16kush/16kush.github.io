@@ -1,28 +1,28 @@
 /*========== GOOGLE FONTS ==========*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Inconsolata|Droid+Sans|Borel|Handjet|Texturina");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 /*==================== VARIABLES CSS ====================*/
 :root {
   --header-height: 3rem;
   /*========== Colors ==========*/
-  --hue-color: 24;
+  /* Change favorite color */
+  --hue-color: 225;
+  /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+  /* HSL color mode */
   --first-color: hsl(var(--hue-color), 69%, 61%);
   --first-color-second: hsl(var(--hue-color), 69%, 61%);
   --first-color-alt: hsl(var(--hue-color), 57%, 53%);
   --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
-  --title-color: hsl(var(--hue-color), 8%, 10%);
-  --text-color: hsl(var(--hue-color), 8%, 25%);
-  --text-color-light: hsl(var(--hue-color), 0%, 45%);
+  --title-color: hsl(var(--hue-color), 8%, 15%);
+  --text-color: hsl(var(--hue-color), 8%, 35%);
+  --text-color-light: hsl(var(--hue-color), 8%, 45%);
   --input-color: hsl(var(--hue-color), 70%, 96%);
   --body-color: hsl(var(--hue-color), 10%, 90%);
   --container-color: #FFF;
-  --neon:var(--first-color);
-  --neon-glow: var(--first-color-alt);
   --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
   /*========== Font and typography ==========*/
-  --body-font: 'Texturina', sans-serif;
+  --body-font: 'Montserrat', sans-serif;
   --big-font-size: 2rem;
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
@@ -33,7 +33,7 @@
   /*========== Font weight ==========*/
   --font-medium: 500;
   --font-semi-bold: 600;
-  /*========== Margins Bottom ==========*/
+  /*========== Margenes Bottom ==========*/
   --mb-0-25: .25rem;
   --mb-0-5: .5rem;
   --mb-0-75: .75rem;
@@ -91,7 +91,6 @@ body.dark-theme {
 }
 
 /*==================== BASE ====================*/
-/* Global Styles */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -102,16 +101,32 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Body Styles */
 body {
-  margin: 0;
+  margin: 0 0 var(--header-height) 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
-  animation: fadeIn 0.5s ease; 
-  background-image: radial-gradient(circle at top right,rgba(121, 68, 154, 0.13),transparent),radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent);
 }
+
+h1, h2, h3, h4 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 
 canvas {
   content: '';
@@ -120,63 +135,9 @@ canvas {
   left: 0;
   width: 100%;
   height: 100%;
+  opacity: 50%;
   z-index: -1;
 }
-
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('/assets/img/Kush_BG.gif') center/cover no-repeat fixed;
-  opacity: 0.3;
-  z-index: -1;
-}
-
-/* Header Styles */
-h1, h2, h3, h4 {
-  color: var(--title-color);
-  font-weight: var(--font-semi-bold);
-  transition: color 0.3s ease;
-}
-
-/* List Styles */
-ul {
-  list-style: none;
-  margin-left: 1.5em;
-}
-
-/* Link Styles */
-a {
-  text-decoration: none;
-  color: var(--link-color);
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: var(--link-hover-color);
-}
-
-/* Image Styles */
-img {
-  max-width: 100%;
-  height: auto;
-  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
-}
-
-/* Animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Background Effect */
 
 /*==================== REUSABLE CSS CLASSES ====================*/
 .section {
