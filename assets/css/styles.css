@@ -187,7 +187,7 @@ canvas {
 
 .home__content {
   grid-template-columns: .5fr 3fr;
-  /* padding-top: 4rem; */
+  padding-top: 4rem;
   align-items: center;
 }
 
