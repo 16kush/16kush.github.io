@@ -1,12 +1,8 @@
 const socialMediaLinks = [
-    { platform: "GitHub", link: "https://www.github.com/16kush", icon: "github-alt" },
-    { platform: "LinkedIn", link: "https://www.linkedin.com/in/kush-shah-47376b20b/", icon: "linkedin-alt" },
-    { platform: "Twitter", link: "https://x.com/kush_islost", icon: "twitter-alt" },
-    { platform: "Instagram", link: "https://instagram.com/16kush", icon: "instagram" },
-    { platform: "Discord", link: "https://discord.com/users/723620056910659646", icon: "discord" },
-    { platform: "LeetCode", link: "https://leetcode.com/rush3016", icon: "react" },
-    { platform: "Snapchat", link: "https://www.snapchat.com/add/kush.islost", icon: "snapchat-alt" },
-    { platform: "Reddit", link: "https://www.reddit.com/user/16kush", icon: "reddit-alien-alt" },
+    { platform: "GitHub", link: "https://www.github.com/16kush", iconLibrary: "uil", iconName: "github-alt" },
+    { platform: "LeetCode", link: "https://leetcode.com/16kush", iconLibrary: "uil", iconName: "nerd" },
+    { platform: "LinkedIn", link: "https://www.linkedin.com/in/16kush", iconLibrary: "uil", iconName: "linkedin-alt" },
+    { platform: "Vsco", link: "https://vsco.co/16kush", iconLibrary: "uil", iconName: "shutter" },
 ];
 
 function generateSocialIcons(containerClass, socialLinks) {
