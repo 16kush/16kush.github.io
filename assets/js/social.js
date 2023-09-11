@@ -15,7 +15,7 @@ function generateSocialIcons(containerClass, socialLinks) {
         socialIcon.classList.add(`${containerClass}`);
         
         const icon = document.createElement('i');
-        icon.classList.add('uil', `uil-${socialLink.icon}`);
+        icon.classList.add(socialLink.iconLibrary, `${socialLink.iconLibrary}-${socialLink.iconName}`);
         socialIcon.appendChild(icon);
         
         container.appendChild(socialIcon);
