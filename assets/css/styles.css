@@ -274,10 +274,9 @@ canvas {
 }
 
 .footer__social {
-  display: inline;
-  font-size: 0.8rem;
-  align-items: center;
-  margin-inline-start: 7%;
+     display: flex;
+    text-align: center;
+    margin-inline-start: 13%;
 }
 
 .footer__social:hover {
